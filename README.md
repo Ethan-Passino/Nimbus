@@ -17,7 +17,7 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
     - Message deletion and edits.
     - Channel creation, updates, and deletion.
     - Member joins, leaves, and role updates.
-    - Voice state changes (join, leave, switch, mute, deafen, etc.).
+    - Voice state changes (join, leave, and switch)
     - Invite creation and deletion.
 
 ---

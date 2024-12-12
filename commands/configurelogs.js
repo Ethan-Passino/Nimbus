@@ -14,6 +14,7 @@ const loggingEvents = [
     'channelUpdate',
     'guildMemberAdd',
     'guildMemberRemove',
+    'guildMemberUpdate',
     'roleCreate',
     'roleDelete',
     'roleUpdate',
@@ -32,7 +33,10 @@ module.exports = {
                 .setName('event')
                 .setDescription('The event to configure.')
                 .setRequired(true)
-                .addChoices(...loggingEvents.map(event => ({ name: event, value: event })))
+                .addChoices(
+                    { name: 'All', value: 'all' }, // Add the "All" option
+                    ...loggingEvents.map(event => ({ name: event, value: event }))
+                )
         )
         .addStringOption(option =>
             option
@@ -67,7 +71,22 @@ module.exports = {
             config[interaction.guild.id] = {};
         }
 
-        // Update the event configuration
+        // Handle the "All" option
+        if (event === 'all') {
+            loggingEvents.forEach(eventName => {
+                config[interaction.guild.id][eventName] = action === 'enable';
+            });
+
+            // Save the updated configuration
+            fs.writeFileSync(configPath, JSON.stringify(config, null, 4));
+
+            return await interaction.reply({
+                content: `All events have been ${action === 'enable' ? 'enabled' : 'disabled'} for logging.`,
+                ephemeral: true,
+            });
+        }
+
+        // Handle individual events
         config[interaction.guild.id][event] = action === 'enable';
 
         // Save the updated configuration

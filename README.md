@@ -9,8 +9,16 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 - **Slash Commands**:
   - `/help`: Displays a list of all commands and their descriptions.
   - `/say`: Makes the bot echo your message.
+  - `/setlogchannel`: Allows admins to set a specific log channel for the server. Requires administrator permissions.
+  - `/configurelogs`: Enables or disables specific logging events. Requires administrator permissions.
 
-- **Customizable Events**: Dynamically handles user actions like messages, interactions, and member joins.
+- **Customizable Events**:
+  - Logs server activity, including:
+    - Message deletion and edits.
+    - Channel creation, updates, and deletion.
+    - Member joins, leaves, and role updates.
+    - Voice state changes (join, leave, switch, mute, deafen, etc.).
+    - Invite creation and deletion.
 
 ---
 
@@ -33,17 +41,14 @@ You can invite Nimbus to your server using the link below:
 
 Here’s what’s coming next to Nimbus:
 
-1. **Action Logging**:
-   - Logs all user actions (or just non-annoying ones) for better server management and accountability.
-
-2. **Punishment System**:
+1. **Punishment System**:
    - A comprehensive system to warn, mute, kick, or ban users based on server rules.
 
-3. **Leveling System**:
+2. **Leveling System**:
    - Tracks user activity and awards levels.
    - Includes a leaderboard and customizable leveling goals that update automatically.
 
-4. **Color Roles System**:
+3. **Color Roles System**:
    - Allows users to create and select custom role colors using commands.
 
 ---

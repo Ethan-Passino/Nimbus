@@ -15,7 +15,7 @@ module.exports = {
             .setTitle('Channel Created')
             .setColor(0x00ff00) // Green
             .addFields(
-                { name: 'Channel Name', value: `${channel.name}`, inline: true },
+                { name: 'Channel Name', value: `${channel.name} (<#${channel.id}>)`, inline: true },
                 { name: 'Channel Type', value: `${channel.type}`, inline: true },
                 { name: 'Channel ID', value: `${channel.id}`, inline: true },
                 { name: 'Created At', value: `<t:${Math.floor(Date.now() / 1000)}>` }

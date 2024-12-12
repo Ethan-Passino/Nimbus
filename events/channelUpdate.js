@@ -15,7 +15,7 @@ module.exports = {
             .setTitle('Channel Updated')
             .setColor(0xffa500) // Orange
             .addFields(
-                { name: 'Channel Name', value: `${newChannel.name}`, inline: true },
+                { name: 'Channel Name', value: `${newChannel.name} (<#${newChannel.id}>)`, inline: true },
                 { name: 'Channel ID', value: `${newChannel.id}`, inline: true },
                 { name: 'Old Topic', value: oldChannel.topic || 'None', inline: true },
                 { name: 'New Topic', value: newChannel.topic || 'None', inline: true },

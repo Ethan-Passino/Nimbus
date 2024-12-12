@@ -17,14 +17,17 @@ module.exports = {
         // Get the author's avatar URL
         const authorAvatar = message.author.displayAvatarURL({ dynamic: true, size: 512 });
 
+        // Create a clickable mention for the author
+        const authorMention = `<@${message.author.id}>`;
+
         // Create an embed with message deletion details
         const embed = new EmbedBuilder()
             .setTitle('Message Deleted')
             .setColor(0xff0000) // Red for deletions
             .setThumbnail(authorAvatar) // Add the author's avatar
             .addFields(
-                { name: 'Author', value: `${message.author.tag} (${message.author.id})`, inline: true },
-                { name: 'Channel', value: `${message.channel.name} (${message.channel.id})`, inline: true },
+                { name: 'Author', value: `${authorMention} (${message.author.tag})`, inline: true },
+                { name: 'Channel', value: `${message.channel.name} (<#${message.channel.id}>)`, inline: true },
                 { name: 'Message Content', value: message.content || '[No content]', inline: false },
                 { name: 'Created At', value: `<t:${Math.floor(message.createdTimestamp / 1000)}>`, inline: true },
                 { name: 'Deleted At', value: `<t:${Math.floor(Date.now() / 1000)}>`, inline: true }

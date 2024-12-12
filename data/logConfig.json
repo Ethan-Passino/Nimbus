@@ -1,0 +1,18 @@
+{
+    "309528104152334337": {
+        "messageUpdate": true,
+        "messageDelete": true,
+        "guildMemberUpdate": true,
+        "channelCreate": true,
+        "channelDelete": true,
+        "channelUpdate": true,
+        "guildMemberAdd": true,
+        "guildMemberRemove": true,
+        "roleCreate": true,
+        "roleDelete": true,
+        "roleUpdate": true,
+        "voiceStateUpdate": true,
+        "inviteCreate": true,
+        "inviteDelete": true
+    }
+}

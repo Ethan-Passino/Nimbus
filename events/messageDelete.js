@@ -1,9 +1,13 @@
 const { EmbedBuilder } = require('discord.js');
 const getLogChannel = require('../utils/getLogChannel');
+const isEventEnabled = require('../utils/isEventEnabled');
 
 module.exports = {
     name: 'messageDelete',
     async execute(message) {
+        // Check if logging for this event is enabled for the guild
+        if (!isEventEnabled(message.guild, 'messageDelete')) return;
+
         // Ensure the message is from a guild and is not a system message
         if (!message.guild || message.author.bot) return;
 

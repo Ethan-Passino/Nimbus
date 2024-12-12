@@ -1,9 +1,13 @@
 const { EmbedBuilder } = require('discord.js');
 const getLogChannel = require('../utils/getLogChannel');
+const isEventEnabled = require('../utils/isEventEnabled');
 
 module.exports = {
     name: 'voiceStateUpdate',
     async execute(oldState, newState) {
+        // Check if logging for this event is enabled for the guild
+        if (!isEventEnabled(oldState.guild, 'voiceStateUpdate')) return;
+
         const logsChannel = getLogChannel(oldState.guild);
         if (!logsChannel) return; // Skip if no log channel is set
 

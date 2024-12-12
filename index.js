@@ -5,7 +5,16 @@ const { Routes } = require('discord-api-types/v10');
 const path = require('path');
 const { token, clientId } = require(path.resolve(__dirname, 'config.json'));
 // Create client instance
-const client = new Client({ intents: [GatewayIntentBits. Guilds]});
+const client = new Client({
+    intents: [
+        GatewayIntentBits.Guilds, // Required for most guild-related events
+        GatewayIntentBits.GuildMembers, // Required for member join/leave, updates
+        GatewayIntentBits.GuildMessages, // Required for message-related events
+        GatewayIntentBits.GuildVoiceStates, // Required for voice state changes
+        GatewayIntentBits.MessageContent, // Required for reading message content (edit/delete events)
+        GatewayIntentBits.GuildInvites, // For invite creation/deletion
+    ],
+});
 
 // Load commands from Commands folder
 client.commands = new Collection();

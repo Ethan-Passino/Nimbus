@@ -4,6 +4,8 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v10');
 const path = require('path');
 const { token, clientId } = require(path.resolve(__dirname, 'config.json'));
+const {loadCustomCommands, saveCustomCommands} = require('./utils/commandUtils');
+
 // Create client instance
 const client = new Client({
     intents: [
@@ -20,6 +22,8 @@ const client = new Client({
 client.commands = new Collection();
 const commands = [];
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+// Path to the custom commands file
+const customCommandsFile = path.resolve(__dirname, 'data/customCommands.json');
 
 console.log("Loading commands:");
 for (const file of commandFiles) {

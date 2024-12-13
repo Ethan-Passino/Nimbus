@@ -14,5 +14,21 @@
         "voiceStateUpdate": true,
         "inviteCreate": true,
         "inviteDelete": true
+    },
+    "362929222987153418": {
+        "messageDelete": true,
+        "messageUpdate": true,
+        "channelCreate": true,
+        "channelDelete": true,
+        "channelUpdate": true,
+        "guildMemberAdd": true,
+        "guildMemberRemove": true,
+        "guildMemberUpdate": true,
+        "roleCreate": true,
+        "roleDelete": true,
+        "roleUpdate": true,
+        "voiceStateUpdate": true,
+        "inviteCreate": true,
+        "inviteDelete": true
     }
 }

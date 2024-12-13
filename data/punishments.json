@@ -19,6 +19,12 @@
           "reason": "Timeout removed",
           "duration": null,
           "timestamp": "2024-12-13T04:23:35.476Z"
+        },
+        {
+          "type": "warn",
+          "reason": "bad",
+          "duration": null,
+          "timestamp": "2024-12-13T04:26:04.425Z"
         }
       ]
     }

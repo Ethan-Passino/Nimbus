@@ -6,27 +6,44 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 
 ## 🌟 Features
 
-- **Slash Commands**:
-  - `/help`: Displays a list of all commands and their descriptions.
-  - `/say`: Makes the bot echo your message.
-  - `/setlogchannel`: Allows admins to set a specific log channel for the server. Requires administrator permissions.
-  - `/configurelogs`: Enables or disables specific logging events. Requires administrator permissions.
-  - `/rank`: Displays your current level and XP.
-  - `/leaderboard`: Shows the top users in the server based on levels and XP.
+### **Moderation Commands**
+- `/warn`: Issues a warning to a user and records it in the punishment log.
+- `/kick`: Kicks a user from the server with an optional reason.
+- `/ban`: Bans a user from the server with an optional reason.
+- `/unmute`: Removes a timeout from a user.
+- `/mute`: Temporarily times out a user with a specified duration and reason.
+- `/clear`: Deletes messages in a channel, optionally filtering by a specific user.
+- `/history`: Retrieves the punishment history of a specific user in the server.
+- `/lockdown`: Prevents members from sending messages in a channel.
+- `/unlock`: Restores message permissions in a previously locked channel.
 
-- **Customizable Events**:
-  - Logs server activity, including:
-    - Message deletion and edits.
-    - Channel creation, updates, and deletion.
-    - Member joins, leaves, and role updates.
-    - Voice state changes (join, leave, and switch).
-    - Invite creation and deletion.
+### **Custom Commands**
+- `/createCommand`: Allows server admins to create custom slash commands specific to their server.
+- `/deleteCommand`: Allows server admins to delete previously created custom commands.
 
-- **Leveling System**:
-  - Tracks user activity and awards XP.
-  - Level-ups occur automatically when users reach the required XP threshold.
-  - Includes a per-server leaderboard with the top users based on level and XP.
-  - Dynamically adjusts XP requirements for each level.
+### **Utility Commands**
+- `/help`: Displays a list of all commands and their descriptions.
+- `/say`: Makes the bot echo your message.
+- `/setlogchannel`: Allows admins to set a specific log channel for the server. Requires administrator permissions.
+- `/configurelogs`: Enables or disables specific logging events. Requires administrator permissions.
+- `/define`: Looks up the definition of a word with support for multiple definitions and examples.
+- `/serverinfo`: Displays detailed information about the current server.
+
+### **Customizable Events**
+- Logs server activity, including:
+  - Message deletion and edits.
+  - Channel creation, updates, and deletion.
+  - Member joins, leaves, and role updates.
+  - Voice state changes (join, leave, and switch).
+  - Invite creation and deletion.
+
+### **Leveling System**
+- Tracks user activity and awards XP.
+- Level-ups occur automatically when users reach the required XP threshold.
+- Includes a per-server leaderboard with the top users based on level and XP.
+- Dynamically adjusts XP requirements for each level.
+- Role rewards for reaching specific levels.
+- Fully customizable progress bars for tracking XP.
 
 ---
 
@@ -49,11 +66,11 @@ You can invite Nimbus to your server using the link below:
 
 Here’s what’s coming next to Nimbus:
 
-1. **Punishment System**:
-   - A comprehensive system to warn, mute, kick, or ban users based on server rules.
-
-2. **Color Roles System**:
+1. **Color Roles System**:
    - Allows users to create and select custom role colors using commands.
+
+2. **Advanced Analytics**:
+   - Monitor server activity and trends through detailed reports and metrics.
 
 ---
 

@@ -1,0 +1,26 @@
+{
+  "guilds": {
+    "309528104152334337": {
+      "377932342863462410": [
+        {
+          "type": "mute",
+          "reason": "bad",
+          "duration": 1,
+          "timestamp": "2024-12-13T04:17:26.554Z"
+        },
+        {
+          "type": "mute",
+          "reason": "bad",
+          "duration": 1,
+          "timestamp": "2024-12-13T04:17:48.224Z"
+        },
+        {
+          "type": "unmute",
+          "reason": "Timeout removed",
+          "duration": null,
+          "timestamp": "2024-12-13T04:23:35.476Z"
+        }
+      ]
+    }
+  }
+}

@@ -28,6 +28,9 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 - `/configurelogs`: Enables or disables specific logging events. Requires administrator permissions.
 - `/define`: Looks up the definition of a word with support for multiple definitions and examples.
 - `/serverinfo`: Displays detailed information about the current server.
+- `/whois`: Provides detailed information about a server member, including join date, roles, and profile details.
+- `/export`: Exports server analytics data to a CSV file (if analytics is enabled).
+- `/analytics`: Displays server analytics data, including total messages, most active channels, and member statistics.
 
 ### **Customizable Events**
 - Logs server activity, including:
@@ -36,6 +39,7 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
   - Member joins, leaves, and role updates.
   - Voice state changes (join, leave, and switch).
   - Invite creation and deletion.
+- Logging events can be enabled or disabled per server for full customization.
 
 ### **Leveling System**
 - Tracks user activity and awards XP.
@@ -44,6 +48,14 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 - Dynamically adjusts XP requirements for each level.
 - Role rewards for reaching specific levels.
 - Fully customizable progress bars for tracking XP.
+
+### **Analytics System**
+- Tracks server activity, including:
+  - Total messages sent.
+  - Most active channels.
+  - Member joins and leaves.
+- Data can be exported as a CSV file for external analysis.
+- Analytics tracking can be enabled or disabled per server.
 
 ---
 
@@ -69,8 +81,8 @@ Here’s what’s coming next to Nimbus:
 1. **Color Roles System**:
    - Allows users to create and select custom role colors using commands.
 
-2. **Advanced Analytics**:
-   - Monitor server activity and trends through detailed reports and metrics.
+2. **Advanced Leveling, Moderation, Color Role System, and Analytics**
+   - Make these systems more complex to have more features.
 
 ---
 

@@ -91,6 +91,7 @@ Here’s what’s coming next to Nimbus:
 - **Music System**:
   - Play your favorite songs through Nimbus in a voice channel.
   - Manage playlists and queues with ease.
+  - This may not be added depending on how complicated it would be to do and how it works with getting the music.
 
 ---
 

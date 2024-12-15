@@ -114,24 +114,28 @@ module.exports = {
             });
 
             collector.on('end', async () => {
-                // Disable buttons after timeout
-                await message.edit({
-                    components: [
-                        new ActionRowBuilder()
-                            .addComponents(
-                                new ButtonBuilder()
-                                    .setCustomId('prev')
-                                    .setLabel('Previous')
-                                    .setStyle(ButtonStyle.Primary)
-                                    .setDisabled(true),
-                                new ButtonBuilder()
-                                    .setCustomId('next')
-                                    .setLabel('Next')
-                                    .setStyle(ButtonStyle.Primary)
-                                    .setDisabled(true)
-                            ),
-                    ],
-                });
+                try {
+                    // Attempt to edit the message to disable buttons
+                    await message.edit({
+                        components: [
+                            new ActionRowBuilder()
+                                .addComponents(
+                                    new ButtonBuilder()
+                                        .setCustomId('prev')
+                                        .setLabel('Previous')
+                                        .setStyle(ButtonStyle.Primary)
+                                        .setDisabled(true),
+                                    new ButtonBuilder()
+                                        .setCustomId('next')
+                                        .setLabel('Next')
+                                        .setStyle(ButtonStyle.Primary)
+                                        .setDisabled(true)
+                                ),
+                        ],
+                    });
+                } catch (error) {
+                    console.error('Error editing message after collector end:', error);
+                }
             });
         }
     },

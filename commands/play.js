@@ -50,11 +50,9 @@ module.exports = {
 
             // Handle player events
             player.on(AudioPlayerStatus.Playing, () => {
-                console.log('Audio is playing!');
             });
 
             player.on(AudioPlayerStatus.Idle, () => {
-                console.log('Audio has ended.');
                 if (connection.state.status !== VoiceConnectionStatus.Destroyed) {
                     connection.destroy();
                 }
@@ -68,7 +66,6 @@ module.exports = {
             });
 
             connection.on(VoiceConnectionStatus.Disconnected, () => {
-                console.log('Disconnected from the voice channel.');
                 if (connection.state.status !== VoiceConnectionStatus.Destroyed) {
                     connection.destroy();
                 }

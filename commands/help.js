@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 
@@ -41,19 +41,98 @@ module.exports = {
                 });
             }
         } else {
-            // Show general help
-            const embed = new EmbedBuilder()
-                .setTitle('Available Commands')
-                .setDescription('Here are the commands you can use:')
-                .setColor(0x00AE86); // Choose a nice color
+            // General help with pagination
+            const itemsPerPage = 10;
+            const totalPages = Math.ceil(commands.length / itemsPerPage);
+            let currentPage = 1;
 
-            commands.forEach(cmd => {
-                embed.addFields({ name: `/${cmd.name}`, value: cmd.description, inline: false });
+            const generateEmbed = (page) => {
+                const startIndex = (page - 1) * itemsPerPage;
+                const currentCommands = commands.slice(startIndex, startIndex + itemsPerPage);
+
+                const embed = new EmbedBuilder()
+                    .setTitle('Available Commands')
+                    .setDescription('Here are the commands you can use:')
+                    .setColor(0x00AE86)
+                    .setFooter({ text: `Page ${page} of ${totalPages}` });
+
+                currentCommands.forEach(cmd => {
+                    embed.addFields({ name: `/${cmd.name}`, value: cmd.description, inline: false });
+                });
+
+                return embed;
+            };
+
+            const row = new ActionRowBuilder()
+                .addComponents(
+                    new ButtonBuilder()
+                        .setCustomId('prev')
+                        .setLabel('Previous')
+                        .setStyle(ButtonStyle.Primary)
+                        .setDisabled(currentPage === 1),
+                    new ButtonBuilder()
+                        .setCustomId('next')
+                        .setLabel('Next')
+                        .setStyle(ButtonStyle.Primary)
+                        .setDisabled(currentPage === totalPages)
+                );
+
+            const message = await interaction.reply({
+                embeds: [generateEmbed(currentPage)],
+                components: [row],
+                ephemeral: true,
+                fetchReply: true,
             });
 
-            embed.setFooter({ text: 'Use /help command:<command_name> for detailed info.' });
+            const collector = message.createMessageComponentCollector({
+                filter: (i) => i.user.id === interaction.user.id,
+                time: 60000, // Timeout after 1 minute
+            });
 
-            await interaction.reply({ embeds: [embed], ephemeral: true });
+            collector.on('collect', async (i) => {
+                if (i.customId === 'prev') currentPage--;
+                if (i.customId === 'next') currentPage++;
+
+                await i.update({
+                    embeds: [generateEmbed(currentPage)],
+                    components: [
+                        new ActionRowBuilder()
+                            .addComponents(
+                                new ButtonBuilder()
+                                    .setCustomId('prev')
+                                    .setLabel('Previous')
+                                    .setStyle(ButtonStyle.Primary)
+                                    .setDisabled(currentPage === 1),
+                                new ButtonBuilder()
+                                    .setCustomId('next')
+                                    .setLabel('Next')
+                                    .setStyle(ButtonStyle.Primary)
+                                    .setDisabled(currentPage === totalPages)
+                            ),
+                    ],
+                });
+            });
+
+            collector.on('end', async () => {
+                // Disable buttons after timeout
+                await message.edit({
+                    components: [
+                        new ActionRowBuilder()
+                            .addComponents(
+                                new ButtonBuilder()
+                                    .setCustomId('prev')
+                                    .setLabel('Previous')
+                                    .setStyle(ButtonStyle.Primary)
+                                    .setDisabled(true),
+                                new ButtonBuilder()
+                                    .setCustomId('next')
+                                    .setLabel('Next')
+                                    .setStyle(ButtonStyle.Primary)
+                                    .setDisabled(true)
+                            ),
+                    ],
+                });
+            });
         }
     },
 };

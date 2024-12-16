@@ -84,14 +84,9 @@ Here’s what’s coming next to Nimbus:
 2. **Advanced Leveling, Moderation, Color Role System, and Analytics**
    - Make these systems more complex to have more features.
 
----
-
-## 🎵 Optional Features Under Consideration
-
-- **Music System**:
+3. **Music System**:
   - Play your favorite songs through Nimbus in a voice channel.
   - Manage playlists and queues with ease.
-  - This may not be added depending on how complicated it would be to do and how it works with getting the music.
 
 ---
 

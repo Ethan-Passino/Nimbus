@@ -12,9 +12,12 @@
   "description": "",
   "dependencies": {
     "@discordjs/rest": "2.4.0",
+    "@discordjs/voice": "^0.18.0",
+    "@distube/ytdl-core": "^4.15.3",
     "csv-writer": "^1.6.0",
     "discord-api-types": "0.37.111",
     "discord.js": "14.16.3",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "yt-search": "^2.12.1"
   }
 }

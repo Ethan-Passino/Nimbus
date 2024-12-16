@@ -33,11 +33,10 @@ module.exports = {
                     .setColor(0x00AE86) // Choose a nice color
                     .setFooter({ text: 'Use /help to see all commands.' });
 
-                await interaction.reply({ embeds: [embed], ephemeral: true });
+                await interaction.reply({ embeds: [embed] }); // Not ephemeral
             } else {
                 await interaction.reply({
                     content: `Command \`${commandName}\` not found.`,
-                    ephemeral: true,
                 });
             }
         } else {
@@ -80,8 +79,7 @@ module.exports = {
             const message = await interaction.reply({
                 embeds: [generateEmbed(currentPage)],
                 components: [row],
-                ephemeral: true,
-                fetchReply: true,
+                fetchReply: true, // Ensure it's fetchable
             });
 
             const collector = message.createMessageComponentCollector({

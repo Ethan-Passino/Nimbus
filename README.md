@@ -32,6 +32,14 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 - `/export`: Exports server analytics data to a CSV file (if analytics is enabled).
 - `/analytics`: Displays server analytics data, including total messages, most active channels, and member statistics.
 
+### **Music Commands**
+- `/play [URL or search term]`: Plays a song in the voice channel you’re connected to. Supports YouTube, Spotify, and more.
+- `/pause`: Pauses the currently playing song.
+- `/resume`: Resumes the paused song.
+- `/stop`: Stops the music and clears the queue.
+- `/queue`: Displays the current song queue.
+- `/skip`: Skips to the next song in the queue.
+
 ### **Customizable Events**
 - Logs server activity, including:
   - Message deletion and edits.
@@ -81,12 +89,8 @@ Here’s what’s coming next to Nimbus:
 1. **Color Roles System**:
    - Allows users to create and select custom role colors using commands.
 
-2. **Advanced Leveling, Moderation, Color Role System, and Analytics**
-   - Make these systems more complex to have more features.
-
-3. **Music System**:
-  - Play your favorite songs through Nimbus in a voice channel.
-  - Manage playlists and queues with ease.
+2. **Advanced Leveling, Moderation, Analytics, and Music**
+   - Make these systems more complex to include more features.
 
 ---
 

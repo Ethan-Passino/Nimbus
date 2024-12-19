@@ -21,6 +21,14 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 - `/createCommand`: Allows server admins to create custom slash commands specific to their server.
 - `/deleteCommand`: Allows server admins to delete previously created custom commands.
 
+### **Color Roles System**
+- `/createcolor [name] [hex]`: Creates a custom color role with a specific name and hex color (Admin only).
+- `/assigncolor [name]`: Assigns a color role to yourself or removes all color roles by selecting "None."
+- `/removecolor [name]`: Removes a specific color from the server's list and deletes its role (Admin only).
+- `/setassigncolorrole [role]`: Sets a required role for using `/assigncolor` or allows everyone if no role is set (Admin only).
+- Fully integrated with autocomplete for selecting colors dynamically.
+- Customizable per server with stored settings and roles.
+
 ### **Utility Commands**
 - `/help`: Displays a list of all commands and their descriptions.
 - `/say`: Makes the bot echo your message.
@@ -86,11 +94,14 @@ You can invite Nimbus to your server using the link below:
 
 Here’s what’s coming next to Nimbus:
 
-1. **Color Roles System**:
-   - Allows users to create and select custom role colors using commands.
+1. **Advanced Features for All Systems**:
+   - Improve functionality and add more depth to Moderation, Custom Commands, Color Roles, Utility, Music, Customizable Events, Leveling, and Analytics.
 
-2. **Advanced Leveling, Moderation, Analytics, and Music**
-   - Make these systems more complex to include more features.
+2. **Permissions Management**:
+   - Allow admins to set fine-grained permissions for all commands, ensuring maximum control and flexibility.
+
+3. **Enhanced Music Experience**:
+   - Introduce playlist support, song looping, volume control, and more advanced features.
 
 ---
 

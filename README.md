@@ -99,6 +99,7 @@ Here’s what’s coming next to Nimbus:
 
 2. **Permissions Management**:
    - Allow admins to set fine-grained permissions for all commands, ensuring maximum control and flexibility.
+   - Add better default permissions
 
 3. **Enhanced Music Experience**:
    - Introduce playlist support, song looping, volume control, and more advanced features.

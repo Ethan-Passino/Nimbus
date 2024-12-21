@@ -30,7 +30,7 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 - Customizable per server with stored settings and roles.
 
 ### **Utility Commands**
-- `/help`: Displays a list of all commands and their descriptions.
+- `/help`: Displays a list of all commands and their descriptions. (may be removed later)
 - `/say`: Makes the bot echo your message.
 - `/setlogchannel`: Allows admins to set a specific log channel for the server. Requires administrator permissions.
 - `/configurelogs`: Enables or disables specific logging events. Requires administrator permissions.

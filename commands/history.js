@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { PermissionsBitField } = require('discord.js');
 const { getUserHistory } = require('../utils/punishmentUtils');
 
 module.exports = {
@@ -12,6 +13,12 @@ module.exports = {
     async execute(interaction) {
         const target = interaction.options.getUser('user');
         const history = getUserHistory(interaction.guild.id, target.id);
+        
+        // History Command: Requires "Moderate Members" permission
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ModerateMembers)) {
+            return interaction.reply({ content: 'You do not have the `Moderate Members` permission required to use this command.', ephemeral: true });
+        }
+
 
         if (history.length === 0) {
             return interaction.reply({ content: `${target.tag} has no recorded punishments.`, ephemeral: true });

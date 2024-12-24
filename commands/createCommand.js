@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, REST, Routes } = require('discord.js');
+const { PermissionsBitField } = require('discord.js');
 const { ensureGuildCommands, saveCustomCommands, loadCustomCommands } = require('../utils/commandUtils');
 const { clientId, token } = require('../config.json'); // Add your bot's clientId and token
 
@@ -16,6 +17,11 @@ module.exports = {
                 .setRequired(true)),
     async execute(interaction) {
         const { guild, options } = interaction;
+
+        // CreateCommand Command: Requires "Manage Guild" permission
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageGuild)) {
+            return interaction.reply({ content: 'You do not have the `Manage Server` permission required to use this command.', ephemeral: true });
+        }
 
         // Ensure the command is executed in a guild
         if (!guild) {

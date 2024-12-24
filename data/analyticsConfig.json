@@ -2,6 +2,9 @@
   "guilds": {
     "309528104152334337": {
       "analyticsEnabled": false
+    },
+    "[object Object]": {
+      "analyticsEnabled": false
     }
   }
 }

@@ -1,4 +1,5 @@
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { PermissionsBitField } = require('discord.js');
 const { loadAnalytics, ensureGuildData } = require('../utils/analyticsUtils');
 const { isAnalyticsEnabled } = require('../utils/analyticsConfigUtils');
 
@@ -7,6 +8,11 @@ module.exports = {
         .setName('analytics')
         .setDescription('View server analytics.'),
     async execute(interaction) {
+        // Analytics Command: Requires "Administrator" permission
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
+            return interaction.reply({ content: 'You do not have the `Administrator` permission required to use this command.', ephemeral: true });
+        }
+
         // Check if analytics is enabled for the guild
         if (!isAnalyticsEnabled(interaction.guild.id)) {
             await interaction.reply({ content: 'Analytics tracking is disabled for this server.', ephemeral: true });

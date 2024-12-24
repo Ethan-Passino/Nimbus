@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+const { PermissionsBitField } = require('discord.js');
 const { savePunishment } = require('../utils/punishmentUtils');
 
 module.exports = {
@@ -16,6 +17,11 @@ module.exports = {
     async execute(interaction) {
         const target = interaction.options.getUser('target');
         const reason = interaction.options.getString('reason') || 'No reason provided';
+
+        // Warn Command: Requires "Moderate Members" permission
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ModerateMembers)) {
+            return interaction.reply({ content: 'You do not have the `Moderate Members` permission required to use this command.', ephemeral: true });
+        }
 
         // Save the warning
         savePunishment(interaction.guild.id, target.id, 'warn', reason);

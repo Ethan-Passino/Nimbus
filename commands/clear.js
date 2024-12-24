@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+const { PermissionsBitField } = require('discord.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -15,6 +16,11 @@ module.exports = {
     async execute(interaction) {
         const amount = interaction.options.getInteger('amount');
         const target = interaction.options.getUser('user');
+        
+        // Clear Command: Requires "Manage Messages" permission
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageMessages)) {
+            return interaction.reply({ content: 'You do not have the `Manage Messages` permission required to use this command.', ephemeral: true });
+        }
 
         if (amount < 1 || amount > 100) {
             return interaction.reply({ content: 'You must specify a number between 1 and 100.', ephemeral: true });

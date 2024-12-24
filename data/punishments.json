@@ -26,6 +26,14 @@
           "duration": null,
           "timestamp": "2024-12-13T04:26:04.425Z"
         }
+      ],
+      "411633897890119699": [
+        {
+          "type": "ban",
+          "reason": "test",
+          "duration": null,
+          "timestamp": "2024-12-24T20:15:12.406Z"
+        }
       ]
     }
   }

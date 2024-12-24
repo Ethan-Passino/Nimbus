@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+const { PermissionsBitField } = require('discord.js');
 const { loadAnalytics } = require('../utils/analyticsUtils');
 const { isAnalyticsEnabled } = require('../utils/analyticsConfigUtils');
 const fs = require('fs');
@@ -11,6 +12,11 @@ module.exports = {
         .setDescription('Export analytics data as a CSV file.'),
     async execute(interaction) {
         const guildId = interaction.guild.id;
+
+        // Export Command: Requires "Administrator" permission
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
+            return interaction.reply({ content: 'You do not have the `Administrator` permission required to use this command.', ephemeral: true });
+        }
 
         // Check if analytics is enabled for the guild
         if (!isAnalyticsEnabled(guildId)) {

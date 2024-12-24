@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+const { PermissionsBitField } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 
@@ -32,6 +33,12 @@ module.exports = {
                 .setRequired(true)),
     async execute(interaction) {
         const { guild, options } = interaction;
+
+        // SetReward Command: Requires "Manage Roles" permission
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageRoles)) {
+            return interaction.reply({ content: 'You do not have the `Manage Roles` permission required to use this command.', ephemeral: true });
+        }
+
         const level = options.getInteger('level');
         const role = options.getRole('role');
 

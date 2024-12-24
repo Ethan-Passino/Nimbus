@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+const { PermissionsBitField } = require('discord.js');
 const { savePunishment } = require('../utils/punishmentUtils');
 
 module.exports = {
@@ -22,6 +23,11 @@ module.exports = {
         const duration = interaction.options.getInteger('duration');
         const reason = interaction.options.getString('reason') || 'No reason provided';
         const member = interaction.guild.members.cache.get(target.id);
+
+        // Mute Command: Requires "Moderate Members" permission
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ModerateMembers)) {
+            return interaction.reply({ content: 'You do not have the `Moderate Members` permission required to use this command.', ephemeral: true });
+        }
 
         if (!member) {
             return interaction.reply({ content: 'User is not in the server.', ephemeral: true });

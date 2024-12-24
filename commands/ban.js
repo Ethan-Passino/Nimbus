@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
+const { PermissionsBitField } = require('discord.js');
 const { savePunishment } = require('../utils/punishmentUtils');
 
 module.exports = {
@@ -14,9 +15,15 @@ module.exports = {
                 .setDescription('Reason for banning the member')
                 .setRequired(false)),
     async execute(interaction) {
+        
         const target = interaction.options.getUser('target');
         const reason = interaction.options.getString('reason') || 'No reason provided';
         const member = interaction.guild.members.cache.get(target.id);
+
+        // Ban Command: Requires "Ban Members" permission
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.BanMembers)) {
+            return interaction.reply({ content: 'You do not have the `Ban Members` permission required to use this command.', ephemeral: true });
+        }
 
         if (!member) {
             return interaction.reply({ content: 'User is not in the server.', ephemeral: true });

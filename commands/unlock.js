@@ -11,6 +11,11 @@ module.exports = {
     async execute(interaction) {
         const channel = interaction.options.getChannel('channel') || interaction.channel;
 
+        // Unlock Command: Requires "Manage Channels" permission
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) {
+            return interaction.reply({ content: 'You do not have the `Manage Channels` permission required to use this command.', ephemeral: true });
+        }
+
         try {
             // Allow SEND_MESSAGES for @everyone
             await channel.permissionOverwrites.edit(interaction.guild.roles.everyone, {

@@ -11,6 +11,11 @@ module.exports = {
     async execute(interaction) {
         const channel = interaction.options.getChannel('channel') || interaction.channel;
 
+        // Lockdown Command: Requires "Manage Channels" permission
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) {
+            return interaction.reply({ content: 'You do not have the `Manage Channels` permission required to use this command.', ephemeral: true });
+        }
+
         try {
             // Deny SEND_MESSAGES for @everyone
             await channel.permissionOverwrites.edit(interaction.guild.roles.everyone, {

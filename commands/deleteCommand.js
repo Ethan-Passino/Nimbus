@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js'); // Import SlashCommandBuilder
+const { PermissionsBitField } = require('discord.js');
 const { loadCustomCommands, saveCustomCommands } = require('../utils/commandUtils'); // Import utility functions
 
 module.exports = {
@@ -11,6 +12,12 @@ module.exports = {
                 .setRequired(true)),
     async execute(interaction) {
         const { guild, options } = interaction;
+
+        // DeleteCommand Command: Requires "Manage Guild" permission
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageGuild)) {
+            return interaction.reply({ content: 'You do not have the `Manage Server` permission required to use this command.', ephemeral: true });
+        }
+
         const name = options.getString('name');
 
         // Load existing commands

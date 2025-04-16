@@ -4,9 +4,7 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 
 ## Dev Note
 
-I am currently taking a break from this project to work on some of my other projects. I plan to come back to this and add more advanced features in the future. Thanks.
-
-I think I'll will continue when NodeChat gets deployed to prod.
+Progress will start again soon on this project!
 
 ---
 

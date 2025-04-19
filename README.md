@@ -107,6 +107,9 @@ Here’s what’s coming next to Nimbus:
 3. **Enhanced Music Experience**:
    - Introduce playlist support, song looping, volume control, and more advanced features.
 
+4. **Customization**:
+   - Allow users to customize per guild bot settings.
+
 ---
 
 ## 💡 Have Ideas?

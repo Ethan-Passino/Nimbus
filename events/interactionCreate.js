@@ -1,4 +1,5 @@
 const { loadCustomCommands } = require('../utils/commandUtils');
+const { isAuthorized } = require('../utils/permissionUtils');
 
 module.exports = {
     name: 'interactionCreate',
@@ -16,6 +17,14 @@ module.exports = {
             const command = client.commands.get(interaction.commandName);
 
             if (command) {
+                const allowed = isAuthorized(interaction.member, interaction.commandName);
+                
+                if(!allowed) {
+                    return interaction.reply({
+                        content: `🚫 You do not have permission to use \`/${interaction.commandName}\`.`,
+                        ephemeral: true,
+                    });
+                }
                 try {
                     await command.execute(interaction);
                 } catch (error) {

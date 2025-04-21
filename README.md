@@ -43,6 +43,7 @@ Progress will start again soon on this project, I've gotten the urge to work on 
 - `/whois`: Provides detailed information about a server member, including join date, roles, and profile details.
 - `/export`: Exports server analytics data to a CSV file (if analytics is enabled).
 - `/analytics`: Displays server analytics data, including total messages, most active channels, and member statistics.
+- `/setcommandroles`: Allows you to set what role can use what command in your guild.
 
 ### **Music Commands**
 - `/play [URL or search term]`: Plays a song in the voice channel you’re connected to. Supports YouTube, Spotify, and more.
@@ -102,7 +103,7 @@ Here’s what’s coming next to Nimbus:
    - Improve functionality and add more depth to Moderation, Custom Commands, Color Roles, Utility, Music, Customizable Events, Leveling, and Analytics.
 
 2. **Permissions Management**:
-   - Add default permissions
+   - Add default permissions and test permission management.
 
 3. **Enhanced Music Experience**:
    - Introduce playlist support, song looping, volume control, and more advanced features.

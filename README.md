@@ -113,12 +113,6 @@ Here’s what’s coming next to Nimbus:
 
 ---
 
-## 💡 Have Ideas?
-
-Got suggestions or feature requests? Feel free to share your thoughts and help shape Nimbus into the ultimate Discord bot!
-
----
-
 ## 🛠️ Developer Notes
 
 Nimbus is actively maintained and regularly updated to bring new features and improvements. The bot uses modern design principles and dynamic loading systems for commands and events, making it flexible and scalable.

@@ -24,6 +24,7 @@ function setGuildCommandRoles(guildId, commandName, roles) {
     savePermissions(perms);
 }
 
+// Checks if a guild member has permissions to the given command.
 function isAuthorized(member, commandName) {
     const roles = getGuildCommandRoles(member.guild.id, commandName);
     return roles.some(role => member.roles.cache.some(r => r.name === role)) || member.permissions.has('Administrator');

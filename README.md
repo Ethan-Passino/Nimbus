@@ -2,12 +2,6 @@
 
 Nimbus is a powerful and customizable Discord bot designed to enhance your server's experience with utility commands, fun features, and robust server management tools.
 
-## Dev Note
-
-Progress will start again soon on this project, I've gotten the urge to work on it again!
-
----
-
 ## 🌟 Features
 
 ### **Moderation Commands**
@@ -110,12 +104,6 @@ Here’s what’s coming next to Nimbus:
 
 4. **Customization**:
    - Allow users to customize per guild bot settings.
-
----
-
-## 💡 Have Ideas?
-
-Got suggestions or feature requests? Feel free to share your thoughts and help shape Nimbus into the ultimate Discord bot!
 
 ---
 

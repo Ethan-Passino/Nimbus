@@ -96,7 +96,7 @@ This is not the most up to date version.
 Here’s what’s coming next to Nimbus:
 
 1. **Advanced Features for All Systems**:
-   - Improve functionality and add more depth to Moderation, Custom Commands, Color Roles, Utility, Music, Customizable Events, Leveling, and Analytics.
+   - Improve functionality and add more depth to Moderation, Custom Commands, Color Roles, Utility, Music, Customizable Events, Leveling, and Analytics. Some of them are not very fleshed out yet, but I am hoping to flesh some of them out more!
 
 2. **Permissions Management**:
    - Add default permissions and test permission management.

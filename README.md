@@ -37,7 +37,7 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 - `/whois`: Provides detailed information about a server member, including join date, roles, and profile details.
 - `/export`: Exports server analytics data to a CSV file (if analytics is enabled).
 - `/analytics`: Displays server analytics data, including total messages, most active channels, and member statistics.
-- `/setcommandroles`: Allows you to set what role can use what command in your guild.
+- `/setcommandroles`: Allows you to set what role can use what command in your specific guild.
 
 ### **Music Commands**
 - `/play [URL or search term]`: Plays a song in the voice channel you’re connected to. Supports YouTube, Spotify, and more.
@@ -85,7 +85,9 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 
 You can invite Nimbus to your server using the link below:
 
-[Invite Nimbus](https://discord.com/oauth2/authorize?client_id=1316495186343231611&permissions=8&integration_type=0&scope=applications.commands+bot)
+[Invite Nimbus](https://discord.com/oauth2/authorize?client_id=1316495186343231611&permissions=8&integration_type=0&scope=applications.commands+bot) 
+
+This is not the most up to date version.
 
 ---
 
@@ -94,7 +96,7 @@ You can invite Nimbus to your server using the link below:
 Here’s what’s coming next to Nimbus:
 
 1. **Advanced Features for All Systems**:
-   - Improve functionality and add more depth to Moderation, Custom Commands, Color Roles, Utility, Music, Customizable Events, Leveling, and Analytics.
+   - Improve functionality and add more depth to Moderation, Custom Commands, Color Roles, Utility, Music, Customizable Events, Leveling, and Analytics. Some of them are not very fleshed out yet, but I am hoping to flesh some of them out more!
 
 2. **Permissions Management**:
    - Add default permissions and test permission management.

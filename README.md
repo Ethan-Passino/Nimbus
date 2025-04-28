@@ -23,8 +23,8 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 - `/createcolor [name] [hex]`: Creates a custom color role with a specific name and hex color (Admin only).
 - `/assigncolor [name]`: Assigns a color role to yourself or removes all color roles by selecting "None."
 - `/removecolor [name]`: Removes a specific color from the server's list and deletes its role (Admin only).
-- `/setassigncolorrole [role]`: Sets a required role for using `/assigncolor` or allows everyone if no role is set (Admin only).
-- Fully integrated with autocomplete for selecting colors dynamically.
+- `/setassigncolorrole [role]`: **DEPRECATED see setcommandroles** Sets a required role for using `/assigncolor` or allows everyone if no role is set (Admin only). 
+- Fully integrated with autocomplete for selecting colors dynamically. 
 - Customizable per server with stored settings and roles.
 
 ### **Utility Commands**

@@ -33,5 +33,6 @@ function isAuthorized(member, commandName) {
 module.exports = {
     getGuildCommandRoles,
     setGuildCommandRoles,
-    isAuthorized
+    isAuthorized,
+    getPermissions
 };

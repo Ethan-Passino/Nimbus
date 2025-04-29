@@ -24,6 +24,18 @@ function setGuildCommandRoles(guildId, commandName, roles) {
     savePermissions(perms);
 }
 
+function removeRoleFromCommand(guildId, commandName, roleName) {
+    const perms = getPermissions();
+    if (!perms[guildId] || !perms[guildId][commandName]) return false; // Nothing to remove
+
+    const currentRoles = perms[guildId][commandName];
+    const updatedRoles = currentRoles.filter(role => role !== roleName);
+
+    perms[guildId][commandName] = updatedRoles;
+    savePermissions(perms);
+    return true;
+}
+
 // Checks if a guild member has permissions to the given command.
 function isAuthorized(member, commandName) {
     const roles = getGuildCommandRoles(member.guild.id, commandName);
@@ -34,5 +46,6 @@ module.exports = {
     getGuildCommandRoles,
     setGuildCommandRoles,
     isAuthorized,
-    getPermissions
+    getPermissions,
+    removeRoleFromCommand
 };

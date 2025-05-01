@@ -38,6 +38,8 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 - `/export`: Exports server analytics data to a CSV file (if analytics is enabled).
 - `/analytics`: Displays server analytics data, including total messages, most active channels, and member statistics.
 - `/setcommandroles`: Allows you to set what role can use what command in your specific guild.
+- `/removepermission`: Allows you to remove permission from a certain command from a certain role.
+- `/getpermissions`: Fetches all of the permissions for each command in the guild the command is sent in.
 
 ### **Music Commands**
 - `/play [URL or search term]`: Plays a song in the voice channel you’re connected to. Supports YouTube, Spotify, and more.

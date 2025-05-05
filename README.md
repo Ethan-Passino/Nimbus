@@ -72,7 +72,7 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
   - Member joins and leaves.
 - Data can be exported as a CSV file for external analysis.
 - Analytics tracking can be enabled or disabled per server.
-
+- Will eventually be updated to be more robust.
 ---
 
 ## 🛠️ Built With

@@ -88,7 +88,7 @@ You can invite Nimbus to your server using the link below:
 
 [Invite Nimbus](https://discord.com/oauth2/authorize?client_id=1316495186343231611&permissions=8&integration_type=0&scope=applications.commands+bot) 
 
-This is not the most up to date version.
+This is not the current version that is in GitHub as full testing hasn't been completed
 
 ---
 

@@ -2,7 +2,7 @@
 
 Nimbus is a powerful and customizable Discord bot designed to enhance your server's experience with utility commands, fun features, and robust server management tools.
 
-## 🌟 Features
+## 🌟 Commands and Features
 
 ### **Moderation Commands**
 - `/warn`: Issues a warning to a user and records it in the punishment log.

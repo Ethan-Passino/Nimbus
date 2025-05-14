@@ -1,8 +1,8 @@
-# ☁️ Nimbus-Bot
+# ☁️ Nimbus Discord Bot/App
 
 Nimbus is a powerful and customizable Discord bot designed to enhance your server's experience with utility commands, fun features, and robust server management tools.
 
-## 🌟 Features
+## 🌟 Commands and Features
 
 ### **Moderation Commands**
 - `/warn`: Issues a warning to a user and records it in the punishment log.
@@ -24,8 +24,7 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
 - `/assigncolor [name]`: Assigns a color role to yourself or removes all color roles by selecting "None."
 - `/removecolor [name]`: Removes a specific color from the server's list and deletes its role (Admin only).
 - `/setassigncolorrole [role]`: **DEPRECATED see setcommandroles** Sets a required role for using `/assigncolor` or allows everyone if no role is set (Admin only). 
-- Fully integrated with autocomplete for selecting colors dynamically. 
-- Customizable per server with stored settings and roles.
+
 
 ### **Utility Commands**
 - `/help`: Displays a list of all commands and their descriptions. (may be removed later)
@@ -73,6 +72,7 @@ Nimbus is a powerful and customizable Discord bot designed to enhance your serve
   - Member joins and leaves.
 - Data can be exported as a CSV file for external analysis.
 - Analytics tracking can be enabled or disabled per server.
+- Will eventually be updated to be more robust.
 
 ---
 
@@ -89,7 +89,7 @@ You can invite Nimbus to your server using the link below:
 
 [Invite Nimbus](https://discord.com/oauth2/authorize?client_id=1316495186343231611&permissions=8&integration_type=0&scope=applications.commands+bot) 
 
-This is not the most up to date version.
+This is not the current version that is in GitHub as full testing hasn't been completed
 
 ---
 

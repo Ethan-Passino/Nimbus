@@ -25,6 +25,7 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 // Path to the custom commands file
 const customCommandsFile = path.resolve(__dirname, 'data/customCommands.json');
 
+// Load commands from commands folder
 console.log("Loading commands:");
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
@@ -33,7 +34,7 @@ for (const file of commandFiles) {
     commands.push(command.data.toJSON());
 }
 
-// Load events
+// Load events from events folder
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
@@ -66,7 +67,7 @@ const rest = new REST({ version: '10'}).setToken(token);
     }
 })();
 
-// Event Listener for ready
+// Let the runner know the bot is up and ready!
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`);
 });

@@ -109,6 +109,9 @@ Here’s what’s coming next to Nimbus:
 4. **Customization**:
    - Allow users to customize per guild bot settings.
 
+5. **Better Database System**:
+   - Move to a standardized database system instead of json files.
+
 ---
 
 ## 🛠️ Developer Notes

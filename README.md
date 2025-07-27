@@ -112,8 +112,4 @@ Here’s what’s coming next to Nimbus:
 5. **Better Database System**:
    - Move to a standardized database system instead of json files.
 
----
 
-## 🛠️ Developer Notes
-
-Nimbus is actively maintained and regularly updated to bring new features and improvements. The bot uses modern design principles and dynamic loading systems for commands and events, making it flexible and scalable.
